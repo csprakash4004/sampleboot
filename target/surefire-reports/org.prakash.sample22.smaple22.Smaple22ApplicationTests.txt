@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.prakash.sample22.smaple22.Smaple22ApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.377 s - in org.prakash.sample22.smaple22.Smaple22ApplicationTests

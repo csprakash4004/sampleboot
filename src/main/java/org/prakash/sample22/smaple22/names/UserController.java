@@ -4,13 +4,11 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-//import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 
 import lombok.extern.log4j.Log4j2;
 
@@ -21,17 +19,11 @@ public class UserController {
 	@Autowired
 	private UserRepository userRepository;
 
-	@GetMapping("/hello")
-	public String sayHello() {
-		log.info("logging");
-		return "Hello!! " + java.time.LocalDateTime.now().toString();
-	}
-
 	@GetMapping("/")
 	public String homePage() {
 		return "redirect:/index";
 	}
-	
+
 	@GetMapping("/showform")
 	public String showForm(User user) {
 		return "show-form";
@@ -48,7 +40,7 @@ public class UserController {
 
 	@GetMapping("/index")
 	public String showNamesList(Model model) {
-		System.out.println(userRepository.findAll());
+		log.debug(userRepository.findAll());
 		model.addAttribute("users", userRepository.findAll());
 		return "index";
 	}
